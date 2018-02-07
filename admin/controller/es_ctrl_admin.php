@@ -50,6 +50,39 @@
 				$this->disconnect();
 			}
 		}
+		
+		public function view(){
+			$this->connect();
+			$this->model = new Admin($this->dbc);
+			try{
+				$row = $this->model->readRecord($this->params);
+				$this->setResult(1, $row, 0, $this->params);
+			}
+			catch(Exception $e){
+				$this->setResult(0, array(), 0, $e->getMessage());
+			}
+			finally{
+				$this->model = NULL;
+				$this->disconnect();
+			}
+		}
+		
+		public function update(){
+			$rowsAffected = 0;
+			$this->connect();
+			$this->model = new Admin($this->dbc);
+			try{
+				$rowsAffected = $this->model->updateRecord($this->params);
+				$this->setResult($rowsAffected, array(), 0, "Registro atualizado.");
+			}
+			catch(Exception $e){
+				$this->setResult(0, array(), 0, $e->getMessage());
+			}
+			finally{
+				$this->model = NULL;
+				$this->disconnect();
+			}
+		}
 	}
 
 ?>

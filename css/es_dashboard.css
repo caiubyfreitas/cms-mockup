@@ -316,7 +316,7 @@ nav.side-navbar a i {
 }
 
 nav.side-navbar .sidebar-header {
-  padding: 30px 15px;
+  padding: 15px 15px;
 }
 
 nav.side-navbar .avatar {
@@ -565,4 +565,22 @@ table{
 	background-color: #c1c1c1;
 	color: #aa0000;
 	font-style: italic;
+}
+.nav-item a:hover{
+	text-decoration: underline;
+}
+#sidebar-profile{
+  padding: 10px 5px 20px 5px;
+  margin: 10px;
+}
+#sidebar-profile img{
+	width: 55px;
+	height: 55px;
+}
+#sidebar-profile a:hover{
+	text-decoration: underline;
+}
+#G01S01-Alerts{
+	padding: 5px 0px 5px 20px;
+	margin: 10px 0px 15px 0px;
 }

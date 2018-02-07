@@ -42,9 +42,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `NAME`, `PASSWORD`, `FULLNAME`, `EMAIL`, `PICTURE`) VALUES
-(17, 'admin1', 'es9L3jnw.obL.', 'Caiuby Freitas', 'cfreitas@test.com1', 'https://drive.google.com/uc?id=13FSpKlrMdnhjvifLdZpNrQzz5ujmPRJ7'),
-(18, 'admin2', 'es9L3jnw.obL.', 'Ana Paula', 'cfreitas@test.com2', 'https://drive.google.com/uc?id=1LHxuGuJxQqa6mwP-Zqo8stjaIVinSUtF'),
-(19, 'admin3', 'es9L3jnw.obL.', 'Luciana', 'cfreitas@test.com3', 'https://drive.google.com/uc?id=1CAdIv-Ld9xXCwdQXXvhXb-C9jK5NizMZ');
+(NULL, 'admin1', 'es9L3jnw.obL.', 'Caiuby Freitas', 'cfreitas@test.com1', 'https://drive.google.com/uc?id=13FSpKlrMdnhjvifLdZpNrQzz5ujmPRJ7'),
+(NULL, 'admin2', 'es9L3jnw.obL.', 'Ana Paula', 'cfreitas@test.com2', 'https://drive.google.com/uc?id=1LHxuGuJxQqa6mwP-Zqo8stjaIVinSUtF'),
+(NULL, 'admin3', 'es9L3jnw.obL.', 'Luciana', 'cfreitas@test.com3', 'https://drive.google.com/uc?id=1CAdIv-Ld9xXCwdQXXvhXb-C9jK5NizMZ');
 
 --
 -- Indexes for dumped tables

@@ -7,7 +7,7 @@
 
 	// Select the proper controller to instantiate
 	switch($module){
-		case "admin":
+		case "G01":
 			require_once("controller/es_ctrl_admin.php");
 			$controller = new AdminController();
 			break;

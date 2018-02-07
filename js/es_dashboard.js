@@ -2,6 +2,8 @@ $(document).ready(function(){
 	
 	// Get current date and time
 	$("#fldToday").html(new Date()); 
+
+	admin.init();
 	
 	prospects.Hide();
 	
@@ -10,6 +12,7 @@ $(document).ready(function(){
 	*/
 	$("#lnkProspects").on("click", function(e){	
 		// Request data from DB
+		$("body").addClass("busy-cursor");
 		controller.call(
 			"listView", 
 			"prospects", 
@@ -24,5 +27,6 @@ $(document).ready(function(){
 		// Stop event propagation
 		e.preventDefault();
 	});
+	
 	
 });

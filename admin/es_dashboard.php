@@ -90,14 +90,15 @@
 			<!-- Side Navbar -->
 			<nav class="side-navbar">
 
-				<!-- Sidebar Header-->
-				<div class="sidebar-header d-flex align-items-center">
-					<div class="avatar"><img src="<?php echo $_SESSION["PICTURE"]; ?>" alt="..." class="img-fluid rounded-circle"></div>
-					<div class="title">
-						<h1 class="h6"><?php echo $_SESSION["FULLNAME"]; ?></h1>
-						<p>Administrador(a)</p>
+				<!-- Sidebar Header-->	
+				
+				<div id="sidebar-profile">
+					<img src="<?php echo $_SESSION["PICTURE"]; ?>" alt="..." class="img-fluid rounded-circle">
+					<div style="float: right;">
+						<a href="#" id="G01S01-lnk" data-id="<?php echo $_SESSION["USER_ID"]; ?>"><?php echo $_SESSION["FULLNAME"]; ?><br>Administrador(a)</a>
 					</div>
 				</div>
+				
 				<!-- Sidebar Navidation Menus-->
 				<span class="heading">Principal</span>
 				<ul class="list-unstyled">
@@ -130,6 +131,69 @@
 
 				<!-- Page Content -->
 				<div id="page-content">
+
+					<section id="G01" class="container">
+					
+						<!--
+						*
+						* Container: G01S01 
+						* Holds administrative user profile's viewable and editable data and is composed by
+						* the following child-elements:
+						* G01S01-Form		> container for editable fields
+						* G01S01-fldFullName> field
+						* G01S01-fldEmail	> field
+						* G01S01-cmdClose	> go back to dashboard
+						* G01S01-cmdSave	> save record command
+						*
+						-->
+						<div id="G01S01" class="collapse">
+							<div class="card shadow-nohover" style="width: 95%;">
+								<div class="card-block">
+									<div class="row">
+										<div class="col">
+											<h4 class="card-title"><span id="title">Alterar Perfil</span></h4>
+										</div>
+									</div>
+									<div class="card-text">
+										<form method="post" id="G01S01-Form">
+											<div class="form-group alert alert-danger collapse" id="G01S01-Alerts"><ul></ul></div>
+											<div class="form-group row">
+												<label for="example-text-input" class="col-2 col-form-label">Nome completo</label>
+												<div class="col-10">
+													<input class="form-control" type="text" value="" id="G01S01-fldFullName" maxlength=30>
+												</div>
+											</div>
+											<div class="form-group row">
+												<label for="example-text-input" class="col-2 col-form-label">Nome de usuário</label>
+												<div class="col-10">
+													<input class="form-control" type="text" value="" id="G01S01-fldName" maxlength=20>
+												</div>
+											</div>
+											<div class="form-group row">
+												<label for="example-text-input" class="col-2 col-form-label">E-mail</label>
+												<div class="col-10">
+													<input class="form-control" type="email" value="" id="G01S01-fldEmail" maxlength=60>
+												</div>
+											</div>
+											<div class="form-group row">
+												<label for="example-text-input" class="col-2 col-form-label">Password</label>
+												<div class="col-10">
+													<input class="form-control" type="password" value="" id="G01S01-fldPassword" maxlength=20>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div id="G01S01-Commands" class="row command_header">
+										<div class="col">
+											<a id="G01S01-cmdClose" href="javascript: $('#G01S01-cmdClose').trigger('click');" class="btn btn-secondary table-button ">Fechar</a>
+											<a id="G01S01-cmdSave" data-id="<?php echo $_SESSION["USER_ID"]; ?>" href="javascript: $('#G01S01-cmdSave').trigger('click');" class="btn btn-primary table-button ">Salvar</a>
+										</div>
+									</div>
+								</div>
+							</div>										
+						</div>
+											
+					</section>
 				
 					<!-- BEGIN Prospects -->
 					<section id="Prospects" class="container">					
@@ -260,6 +324,25 @@
 						
 					</section>
 					<!-- END Prospects -->
+					
+					<section id="MESSAGEBOX" class="collapse modal fade" data-animation="false">
+						<div class="modal-dialog" role="alert">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Notificação</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<p id="MESSAGEBOX-text"></p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+								</div>
+							</div>
+						</div>
+					</section>
 				
 				</div>
 				
@@ -297,6 +380,7 @@
     <script src="../glb/controller.js"></script>
 
     <!-- Views -->
+    <script src="view/es_admin.js"></script>
     <script src="view/es_view_prospects.js"></script>
 	
     <!-- Dashboard specifics -->
