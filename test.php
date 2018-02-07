@@ -5,7 +5,7 @@
 				return floatval($val);
 	}
 
-	$string = "12,34";
+	$string = "3,1416";
 	$number = floatvalue($string);
 	
 	$r = 40 + 7.5 + $number;
