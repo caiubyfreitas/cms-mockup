@@ -83,7 +83,7 @@
 					</div>
 				</div>
 			</nav>
-		</header>
+		</header> 
 
 		<div class="page-content d-flex align-items-stretch"> 
 
