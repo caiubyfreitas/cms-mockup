@@ -72,7 +72,7 @@
 						<div class="navbar-header">
 							<!-- Navbar Brand -->
 							<div class="brand-text">
-								<span>Essencial</span><strong>Dashboard</strong><BR><small><span id="fldToday"></small></small>
+								<span>Essencial</span><strong>Content Managment System - Dashboard</strong><BR><small><span id="fldToday"></small></small>
 							</div>
 						</div>
 						<!-- Navbar Menu -->
