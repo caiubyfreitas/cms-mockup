@@ -1,5 +1,16 @@
 <?php
 	namespace Globals\helpers;
+
+	/*
+	* Redirect the user to the page indicated
+	* @param name of page including the file extension
+	* @return none
+	*/
+	function redirect($page){
+		$host = $_SERVER["HTTP_HOST"];
+		$uri  = rtrim(dirname($_SERVER["PHP_SELF"]), "\//") . "/";
+		header("Location: http://$host$uri$page");			
+	}
 	
 	/*
 	 * Remove characters that might be used for SQL injection

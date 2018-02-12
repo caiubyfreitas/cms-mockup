@@ -1,0 +1,252 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ec",
+				"echo\techo \"…\""
+			],
+			[
+				"strip",
+				"strip_tags"
+			],
+			[
+				"real",
+				"real_escape_string"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"chec",
+				"checkbox"
+			],
+			[
+				"fldpho",
+				"fldPhoneValidationMsg"
+			],
+			[
+				"border",
+				"border-color"
+			],
+			[
+				"add",
+				"addItem"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 71.0,
+		"last_filter": "list p",
+		"selected_items":
+		[
+			[
+				"list p",
+				"Package Control: List Packages"
+			],
+			[
+				"upg",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"",
+				"Set Syntax: HTML"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"pack",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"lin",
+				"Package Control: List Unmanaged Packages"
+			]
+		],
+		"width": 444.0
+	},
+	"console":
+	{
+		"height": 773.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/wwwroot/cms-mockup"
+	],
+	"file_history":
+	[
+		"/C/Users/Caiuby/Documents/teste.php",
+		"/C/Users/Caiuby/Desktop/proposta imovirtual",
+		"/E/wwwroot/phplab/espace_chars/test.php",
+		"/C/Users/Caiuby/Desktop/PROJETO IMOESPECIAL",
+		"/E/wwwroot/www.essencialassessoria.pt/v2/sendmail.php",
+		"/E/wwwroot/phplab/basic template/test.php",
+		"/E/wwwroot/www.essencialassessoria.pt/v2/documents/essencia_wsadmin",
+		"/E/wwwroot/www.essencialassessoria.pt/v2/css/bootstrap.min.css",
+		"/E/wwwroot/www.essencialassessoria.pt/v1/index.html",
+		"/E/wwwroot/www.essencialassessoria.pt/v2/css/main.css",
+		"/E/wwwroot/www.essencialassessoria.pt/v2/index.html",
+		"/E/wwwroot/www.essencialassessoria.pt/database.php",
+		"/E/wwwroot/www.essencialassessoria.pt/js/main.js",
+		"/E/wwwroot/www.essencialassessoria.pt/index.html",
+		"/E/wwwroot/www.essencialassessoria.pt/css/main.css",
+		"/E/wwwroot/udemy/budget/app.js",
+		"/C/Users/Caiuby/Documents/teste.js"
+	],
+	"find":
+	{
+		"height": 49.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "E:\\wwwroot\\cms-mockup"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 49.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 144.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 94.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 270.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
