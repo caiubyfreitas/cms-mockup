@@ -89,7 +89,7 @@
 						<div class="navbar-header">
 							<!-- Navbar Brand -->
 							<div class="brand-text">
-								<span>Essencial</span><strong>Content Management System - Dashboard</strong><BR><small><span id="fldToday"></small></small>
+								<span><strong>Essencial</strong>&nbsp;Content Management System <i>Dashboard</i><BR><small><span id="fldToday"></small></small>
 							</div>
 						</div>
 						<!-- Navbar Menu -->
