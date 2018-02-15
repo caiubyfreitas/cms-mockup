@@ -51,11 +51,11 @@
 			}
 		}
 		
-		public function view(){
+		public function findById(){
 			$this->connect();
 			$this->model = new Admin($this->dbc);
 			try{
-				$row = $this->model->readRecord($this->params);
+				$row = $this->model->findById($this->params);
 				$this->setResult(1, $row, 0, $this->params);
 			}
 			catch(Exception $e){
@@ -72,7 +72,7 @@
 			$this->connect();
 			$this->model = new Admin($this->dbc);
 			try{
-				$rowsAffected = $this->model->updateRecord($this->params);
+				$rowsAffected = $this->model->update($this->params);
 				$this->setResult($rowsAffected, array(), 0, "Registro atualizado.");
 			}
 			catch(Exception $e){

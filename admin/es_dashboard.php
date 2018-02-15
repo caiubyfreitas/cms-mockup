@@ -1,6 +1,9 @@
 
 <?php
+	require_once ("../glb/helpers.php");
+	use function Globals\helpers\redirect;
 
+	// Creates session 
 	if (version_compare(phpversion(), '5.4.0', '<')) {
 		if(session_id() == ''){
 			session_start();
@@ -11,15 +14,29 @@
 			session_start();
 		}
 	}
-	// if not logged in, session variable will not be defined
+	
+	//Check if user's credential is still valid. if not, redirect to the login page
 	if (!isset($_SESSION["USER_ID"])){
-		// redirect to login page 
-		$host = $_SERVER["HTTP_HOST"];
-		$uri  = rtrim(dirname($_SERVER["PHP_SELF"]), "\//") . "/";
-		$page = "es_login.html";
-		header("Location: http://$host$uri$page");
+		redirect("es_login.html");
 	}
-	 
+	
+	// Retrieve information from session variables
+	function getUserPicture(){
+		if (isset($_SESSION["PICTURE"])){
+			echo $_SESSION["PICTURE"];
+		}
+	}
+	function getUserId(){
+		if (isset($_SESSION["USER_ID"])){
+			echo $_SESSION["USER_ID"];
+		}
+	}
+	function getUserName(){
+		if (isset($_SESSION["FULLNAME"])){
+			echo $_SESSION["FULLNAME"] . "<br>Administrador(a)";
+		}
+	}
+	
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +89,7 @@
 						<div class="navbar-header">
 							<!-- Navbar Brand -->
 							<div class="brand-text">
-								<span>Essencial</span><strong>Content Managment System - Dashboard</strong><BR><small><span id="fldToday"></small></small>
+								<span>Essencial</span><strong>Content Management System - Dashboard</strong><BR><small><span id="fldToday"></small></small>
 							</div>
 						</div>
 						<!-- Navbar Menu -->
@@ -91,11 +108,10 @@
 			<nav class="side-navbar">
 
 				<!-- Sidebar Header-->	
-				
 				<div id="sidebar-profile">
-					<img src="<?php echo $_SESSION["PICTURE"]; ?>" alt="..." class="img-fluid rounded-circle">
+					<img src="<?php getUserPicture(); ?>" alt="..." class="img-fluid rounded-circle">
 					<div style="float: right;">
-						<a href="#" id="G01S01-lnk" data-id="<?php echo $_SESSION["USER_ID"]; ?>"><?php echo $_SESSION["FULLNAME"]; ?><br>Administrador(a)</a>
+						<a href="#" id="G01S01-lnk" data-id="<?php getUserId(); ?>"><?php getUserName(); ?></a>
 					</div>
 				</div>
 				
@@ -132,7 +148,7 @@
 				<!-- Page Content -->
 				<div id="page-content">
 
-					<section id="G01" class="container">
+					<section id="Section-Admin" class="container">
 					
 						<!--
 						*
@@ -196,7 +212,7 @@
 					</section>
 				
 					<!-- BEGIN Prospects -->
-					<section id="Prospects" class="container">					
+					<section id="Section-Prospect" class="container">					
 					
 						<!-- 
 						*
@@ -381,7 +397,7 @@
 
     <!-- Views -->
     <script src="view/es_admin.js"></script>
-    <script src="view/es_view_prospects.js"></script>
+    <script src="view/es_prospects.js"></script>
 	
     <!-- Dashboard specifics -->
     <script src="../js/es_dashboard.js"></script>

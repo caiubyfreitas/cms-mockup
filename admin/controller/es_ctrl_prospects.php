@@ -19,7 +19,7 @@
 			return parent::call($action, $params);
 		}
 		
-		public function listView($page = 1){
+		public function getAllRecords($page = 1){
 			$totalRecords = 0;
 			$this->connect();
 			$this->model = new Prospect($this->dbc);
@@ -62,7 +62,7 @@
 			}
 		}
 		
-		public function view(){
+		public function findById(){
 			$row = NULL;
 			$this->connect();
 			$this->model = new Prospect($this->dbc);

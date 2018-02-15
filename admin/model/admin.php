@@ -32,7 +32,7 @@
 			return $row;
 		}
 		
-		public function readRecord($params){
+		public function findById($params){
 			$row = NULL;
 			$stmt = "SELECT NAME, FULLNAME, EMAIL FROM USER WHERE ID = :id";
 			try{
@@ -46,7 +46,7 @@
 			return $row;
 		}
 		
-		public function updateRecord($params){
+		public function update($params){
 			$rowsAffected = 0;
 			$stmt = "UPDATE USER SET FULLNAME = :fullname, NAME = :name, EMAIL = :email, PASSWORD = :password WHERE ID = :id";
 			try{
