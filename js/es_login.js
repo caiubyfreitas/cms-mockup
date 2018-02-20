@@ -27,7 +27,7 @@ $(document).ready(function() {
 			// process the form
 			controller.call(
 				"validate",
-				"G01",
+				"Admin",
 				formData,
 				function(data){
 					// If record is found...

@@ -30,7 +30,7 @@
 		public function getAllRecords($startAt){
 			$records = 0;
 			$rows = array();
-			$stmt = "SELECT ID, FULLNAME, EMAIL FROM PROSPECT ORDER BY 1 DESC LIMIT 10 OFFSET " . ($startAt);
+			$stmt = "SELECT ID, NAME, EMAIL FROM PROSPECT ORDER BY 1 DESC LIMIT 10 OFFSET " . ($startAt);
 			try{		
 				$rows = $this->dbc->getRows($stmt, array());
 			}
@@ -61,7 +61,7 @@
 		
 		public function findById($params){
 			$row = NULL;
-			$stmt = "SELECT ID, FULLNAME, EMAIL FROM PROSPECT WHERE ID = :id";
+			$stmt = "SELECT ID, NAME, EMAIL FROM PROSPECT WHERE ID = :id";
 			try{
 				$row = $this->dbc->getRows($stmt, array("id" => $params["id"]));
 			}

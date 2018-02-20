@@ -549,23 +549,6 @@ body.busy-cursor {
 .table-button{
 	align: right;
 }
-
-table{
-	font-size: 14px;
-	padding: 0px;
-	margin: 0px;
-}
-.pagination{
-	font-size: 12px;
-	padding: 0px;
-	margin: 0px;
-}
-.recordRemoved{
-	text-decoration: line-through;
-	background-color: #c1c1c1;
-	color: #aa0000;
-	font-style: italic;
-}
 .nav-item a:hover{
 	text-decoration: underline;
 }
@@ -580,7 +563,10 @@ table{
 #sidebar-profile a:hover{
 	text-decoration: underline;
 }
-#G01S01-Alerts{
-	padding: 5px 0px 5px 20px;
-	margin: 10px 0px 15px 0px;
+
+
+
+
+.inline{
+   display: inline; 
 }

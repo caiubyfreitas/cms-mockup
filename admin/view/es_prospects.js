@@ -25,9 +25,9 @@ var prospect = (function(){
 	
 	
 		Init: function(){
-			$("#ProspectsView").hide(); 			
-			$("#ProspectsEdit").hide(); 			
-			$("#ProspectsDelete").hide();
+			$("#Prospect-View").hide(); 			
+			$("#Prospect-Edit").hide(); 			
+			$("#Prospect-Delete").hide();
 		},
 		
 		
@@ -67,13 +67,13 @@ var prospect = (function(){
 		// Deletion confirmation dialog passing on the id of the selected record.
 		Delete: function(action, module, data, eventSource){
 			controller.call(
-				"Remove",
+				"remove",
 				"Prospect", 
 				{ 
 					"id" : data 
 				},
 				function(data){
-					this.ShowGridView($("#ProspectsView-Pagination li.active a").text());
+					this.ShowGridView($("#Prospect-View-Pagination li.active a").text());
 				},
 				function(data){
 					console.log(data)
@@ -95,36 +95,36 @@ var prospect = (function(){
 			global.ShowWaitCursor(true);
 
 			// Set user interface
-			$("#ProspectsEdit").hide();				
+			$("#Prospect-Edit").hide();				
 			$("#lnkProspects").parent().addClass("active");
-			$("#ProspectsView-Records").hide();
-			$("#ProspectsView-DataTable").hide();
-			$("#ProspectsView-Message").hide();
-			$("#ProspectsView-Pagination").hide();
-			$("#ProspectsView-DataTable tbody tr").remove();	
+			$("#Prospect-View-Records").hide();
+			$("#Prospect-View-DataTable").hide();
+			$("#Prospect-View-Message").hide();
+			$("#Prospect-View-Pagination").hide();
+			$("#Prospect-View-DataTable tbody tr").remove();	
 
 			// Binds ON DELETE event to the handler
-			$("#ProspectsDelete-Confirmation").on("click", function(e){
-				$("#ProspectsDelete").modal("hide");
+			$("#Prospect-Delete-Confirmation").on("click", function(e){
+				$("#Prospect-Delete").modal("hide");
 				this.Delete($(this).data("id"), $(this).data("eventSource"));	
 			});					
 
 			// If empty
 			if (data.RECORDS === 0){
-				$("#ProspectsView-Message").html(data.MESSAGE);
-				$("#ProspectsView-Message").show();
+				$("#Prospect-View-Message").html(data.MESSAGE);
+				$("#Prospect-View-Message").show();
 			}
 			else {
 				var str = "";
-				var table = $("#ProspectsView-DataTable tbody");
+				var table = $("#Prospect-View-DataTable tbody");
 				$.each(data.ROWS, function(idx, record){
 					
 					// Create HTML output for each record retrieved
 					str  = "<tr><td style=\"width:10%\">" + (++idx) + "</td>";
-					str += "<td style=\"width:40%\">" + record.FULLNAME + "</td>";
+					str += "<td style=\"width:40%\">" + record.NAME + "</td>";
 					str += "<td style=\"width:40%\">" + record.EMAIL + "</td>";
 					str += "<td class=\"text-center\" style=\"width:10%\">";
-					str += "<a href=\"#\" class=\"btn btn-info btn-sm\" id=\"lnkEdit" + (idx) + "\" data-id=\"" + (record.ID) + "\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> Edit</a>&nbsp;"
+					str += "<a href=\"#\" class=\"btn btn-info btn-sm\" id=\"lnkEdit" + (idx) + "\" data-id=\"" + (record.ID) + "\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i> Ver</a>&nbsp;"
 					str += "<a href=\"#\" class=\"btn btn-danger btn-sm\" id=\"lnkRemove" + (idx) + "\" data-id=\"" + (record.ID) + "\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></a>";
 					str += "</td></tr>";
 					table.append(str);	
@@ -137,9 +137,9 @@ var prospect = (function(){
 
 					// Binds ON_REMOVE event handler dynamically
 					$("#lnkRemove"+idx).on("click", function(e){
-						$("#ProspectsDelete-Confirmation").data("id", $(this).data("id"));
-						$("#ProspectsDelete-Confirmation").data("eventSource", idx);
-						$("#ProspectsDelete").modal("show");
+						$("#Prospect-Delete-Confirmation").data("id", $(this).data("id"));
+						$("#Prospect-Delete-Confirmation").data("eventSource", idx);
+						$("#Prospect-Delete").modal("show");
 						e.preventDefault();
 					});
 				});
@@ -151,12 +151,12 @@ var prospect = (function(){
 					var totalRecords = data.RECORDS;
 					var currentPage = data.CURRPAGE;
 
-					$("#ProspectsView-Pagination li").remove();
+					$("#Prospect-View-Pagination li").remove();
 					var str = "";
 					var pages = Math.ceil(totalRecords / maxPerPage);
 					for (i=1; i<=pages; i++){
 						str = "<li class=\"page-item" + ((i == currentPage)? " active" : "") + "\"><a id=\"lnkPage" + (i) + "\" class=\"page-link\" href=\"#\">" + (i) + "</a></li>"; 
-						$("#ProspectsView-Pagination ul").append(str);
+						$("#Prospect-View-Pagination ul").append(str);
 
 						// Binds ON CLICK event to the handler dynamically, so that the page number can be passed on to the controller
 						$("#lnkPage"+i).on("click", function(e){
@@ -164,27 +164,27 @@ var prospect = (function(){
 							e.preventDefault();
 						});
 					}
-					(pages > 1) ? $("#ProspectsView-Pagination").show() : $("#ProspectsView-Pagination").hide();
+					(pages > 1) ? $("#Prospect-View-Pagination").show() : $("#Prospect-View-Pagination").hide();
 
 
-					$("#ProspectsView-Records").html(data.RECORDS);
-					$("#ProspectsView-Records").show();
+					$("#Prospect-View-Records").html(data.RECORDS);
+					$("#Prospect-View-Records").show();
 				}
-				$("#ProspectsView-DataTable").show();
+				$("#Prospect-View-DataTable").show();
 			}
-			$("#ProspectsView").show();				
+			$("#Prospect-View").show();				
 			global.ShowWaitCursor(false);
 		},
 		
 		// Shows record view page
 		ShowRecordView: function(data){
 			global.ShowWaitCursor(true);
-			$("#ProspectsEdit #fldFullName").val(data.ROWS[0].FULLNAME);
-			$("#ProspectsEdit #fldEmail").val(data.ROWS[0].EMAIL);
-			$("#ProspectsView").hide();				
-			$("#ProspectsEdit-DataView").show();
-			$("ProspectsEdit-Commands").show();
-			$("#ProspectsEdit").show();
+			$("#Prospect-Edit #fldFullName").val(data.ROWS[0].NAME);
+			$("#Prospect-Edit #fldEmail").val(data.ROWS[0].EMAIL);
+			$("#Prospect-View").hide();				
+			$("#Prospect-Edit-DataView").show();
+			$("Prospect-Edit-Commands").show();
+			$("#Prospect-Edit").show();
 			global.ShowWaitCursor(false);
 		}
 

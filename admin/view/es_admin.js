@@ -16,36 +16,36 @@ var admin = (function(){
 	function ValidChanges(){
 		
 		// read field values
-		var fullname = $("#G01S01-fldFullName").val();
-		var name = $("#G01S01-fldName").val();
-		var email = $("#G01S01-fldEmail").val();
-		var password = $("#G01S01-fldPassword").val();
+		var fullname = $("#Admin-fldFullName").val();
+		var name = $("#Admin-fldName").val();
+		var email = $("#Admin-fldEmail").val();
+		var password = $("#Admin-fldPassword").val();
 		
 		// clear previous alerts
-		$("#G01S01-Alerts").hide();
-		$("#G01S01-Alerts li").remove();
+		$("#Admin-Alerts").hide();
+		$("#Admin-Alerts li").remove();
 		
 		// check required fields
 		if (fullname.length == 0){
-			$("#G01S01-fldFullName").focus();
-			$("#G01S01-Alerts").append("<li>Informe seu nome completo. Evite abreviações se possível.</li>"); 
+			$("#Admin-fldFullName").focus();
+			$("#Admin-Alerts").append("<li>Informe seu nome completo. Evite abreviações se possível.</li>"); 
 		}			
 		if (name.length == 0){
-			$("#G01S01-fldName").focus();
-			$("#G01S01-Alerts").append("<li>Informe um nome curto e significativo para acessar o sistema.</li>"); 
+			$("#Admin-fldName").focus();
+			$("#Admin-Alerts").append("<li>Informe um nome curto e significativo para acessar o sistema.</li>"); 
 		}
 		if (email.length == 0){
-			$("#G01S01-fldEmail").focus();
-			$("#G01S01-Alerts").append("<li>Indique o e-mail para receber notificações do sistema.</li>"); 
+			$("#Admin-fldEmail").focus();
+			$("#Admin-Alerts").append("<li>Indique o e-mail para receber notificações do sistema.</li>"); 
 		}
 		if (password.length == 0){
-			$("#G01S01-fldPassword").focus();
-			$("#G01S01-Alerts").append("<li>Crie uma senha que contenha números e letras para aumentar sua segurança.</li>"); 
+			$("#Admin-fldPassword").focus();
+			$("#Admin-Alerts").append("<li>Crie uma senha que contenha números e letras para aumentar sua segurança.</li>"); 
 		}
 		
 		// check if any alert was appended to the page to trigger proper action
-		if ($("#G01S01-Alerts li").length > 0){
-			$("#G01S01-Alerts").show();
+		if ($("#Admin-Alerts li").length > 0){
+			$("#Admin-Alerts").show();
 			return false;
 		}
 		else{
@@ -118,10 +118,12 @@ var admin = (function(){
 		// Show record view page
 		ShowRecordView: function(data){
 			global.ShowWaitCursor(true);
-			$("#G01S01-fldFullName").val(data.ROWS[0].FULLNAME);
-			$("#G01S01-fldName").val(data.ROWS[0].NAME);
-			$("#G01S01-fldEmail").val(data.ROWS[0].EMAIL);
-			$("#G01S01").show();
+			$("#Admin-Alerts").hide();
+			$("#Admin-Alerts li").remove();
+			$("#Admin-fldFullName").val(data.ROWS[0].FULLNAME);
+			$("#Admin-fldName").val(data.ROWS[0].NAME);
+			$("#Admin-fldEmail").val(data.ROWS[0].EMAIL);
+			$("#Admin").show();
 			global.ShowWaitCursor(false);
 		}
 		
@@ -137,19 +139,19 @@ var admin = (function(){
 
 $(document).ready(function(){
 
-	$("#G01S01-lnk").on("click", function(e){
+	$("#Admin-lnk").on("click", function(e){
 		global.UIReset();
 		admin.GetRecord({"id" : $(this).data("id")});
 		$("#Section-Admin").show();
 		e.preventDefault();
 	});
 
-	$("#G01S01-cmdClose").on("click", function(e){
-		$("#G01S01").hide();
+	$("#Admin-cmdClose").on("click", function(e){
+		$("#Admin").hide();
 		e.preventDefault();		
 	});
 
-	$("#G01S01-cmdSave").on("click", function(e){
+	$("#Admin-cmdSave").on("click", function(e){
 		// check if logged user id is not expired
 		var id = $(this).data("id");
 		if ( !(id) || (id.length == 0) ){
@@ -159,10 +161,10 @@ $(document).ready(function(){
 			admin.UpdateRecord(
 				{
 					"id" 		: $(this).data("id"),
-					"fullname" 	: $("#G01S01-fldFullName").val(),
-					"name" 		: $("#G01S01-fldName").val(),
-					"email"		: $("#G01S01-fldEmail").val(),
-					"password" 	: $("#G01S01-fldPassword").val()
+					"fullname" 	: $("#Admin-fldFullName").val(),
+					"name" 		: $("#Admin-fldName").val(),
+					"email"		: $("#Admin-fldEmail").val(),
+					"password" 	: $("#Admin-fldPassword").val()
 				}
 			);		
 		}
