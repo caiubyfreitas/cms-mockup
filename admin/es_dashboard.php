@@ -90,7 +90,7 @@
 						<div class="navbar-header">
 							<!-- Navbar Brand -->
 							<div class="brand-text">
-								<span><strong>Essencial</strong>&nbsp;Content Management System <i>Dashboard</i><BR><small><span id="fldToday"></small></small>
+								<strong>Essencial</strong>&nbsp;Content Management System <i>Dashboard</i><BR><small><span id="fldToday"></small></small>
 							</div>
 						</div>
 						<!-- Navbar Menu -->
@@ -292,7 +292,7 @@
 															</div>
 														</div>
 														<div class="col-6">
-															<label for="recipient-name" class="control-label">Telefone mÃ³vel</label>
+															<label for="recipient-name" class="control-label">Telefone móvel</label>
 															<div class="input-group">
 																<span class="input-group-addon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
 																<input type="text" class="form-control" id="fldMobilePhone">							
